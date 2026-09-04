@@ -1,1 +1,8 @@
 setup/terraform/*.tfstate*
+
+# Terraform generated files
+setup/terraform/.terraform/
+setup/terraform/.terraform.lock.hcl
+
+# Local setup binary
+setup/aws-iam-authenticator
