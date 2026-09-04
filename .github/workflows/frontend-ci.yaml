@@ -66,12 +66,30 @@ jobs:
       - check_style
       - verify_tests
 
+    defaults:
+      run:
+        working-directory: starter/frontend
+
     steps:
       - name: Get source
         uses: actions/checkout@v4
 
+      - name: Prepare Node environment
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: starter/frontend/.nvmrc
+          cache: npm
+          cache-dependency-path: starter/frontend/package-lock.json
+
+      - name: Install frontend packages
+        run: npm ci
+
+      - name: Re-run frontend tests before image build
+        run: npm test
+        env:
+          CI: true
+
       - name: Create frontend container image
-        working-directory: starter/frontend
         env:
           MOVIE_API_URL: http://localhost:5000
         run: |
