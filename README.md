@@ -1,3 +1,20 @@
+## Live Application URLs
+
+### Frontend
+
+[Live Frontend Application](http://a20c28184bd7441f9a438d0dd540c71e-628125796.us-east-1.elb.amazonaws.com)
+
+The frontend displays the movie list retrieved from the backend API.
+
+### Backend
+
+[Live Backend API - `/movies`](http://a4dbac83d8b61433e80c093b52d9557a-874166122.us-east-1.elb.amazonaws.com/movies)
+
+The backend `/movies` endpoint returns the available movie data and can be used by the reviewer to verify backend functionality.
+
+
+
+
 # Movie Picture Pipeline
 
 You've been brought on as the DevOps resource for a development team that manages a web application that is a catalog of Movie Picture movies. They're in dire need of automating their development workflows in hopes of accelerating their release cycle. They'd like to use Github Actions to automate testing, building and deploying their applications to an existing Kubernetes cluster.
